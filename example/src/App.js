@@ -1,10 +1,31 @@
 import React from 'react'
+import Icon from 'react-tutti-crypto'
+import Manifest from './manifest.json'
 
-import { ExampleComponent } from 'react-tutti-crypto'
-import 'react-tutti-crypto/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  // console.log(Yo)
+  return <>
+  <Icon symbol='WTC' color= '#222' width='64' height='64' />
+  {/* {
+    Manifest.map(i=>{
+      var s = i.symbol
+      return (
+        <div style={{display:'inline-block', margin: '3%'}}>
+        <div>
+        <Icon name={s} symbo={s} color={'#222'} width={'64'} height={'64'}  />
+        </div>
+        <div>
+        {i.name}
+        </div>
+        
+        </div>
+      )
+    })
+  } */}
+  
+ 
+  </>
 }
 
 export default App
