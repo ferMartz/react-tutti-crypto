@@ -6,7 +6,7 @@ import Manifest from './manifest.json'
 const App = () => {
   // console.log(Yo)
   return <>
-  <Icon symbol='WTC' color= '#222' width='64' height='64' />
+  <Icon symbol='EMC2' color= '#0000FF' width='64' height='64' />
   {/* {
     Manifest.map(i=>{
       var s = i.symbol
