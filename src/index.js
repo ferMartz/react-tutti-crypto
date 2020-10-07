@@ -27,12 +27,13 @@ import { Path } from './components/path'
 // import SvgFactory from './components/svg_factory'
 
 export default function ({ name, symbol, color, width, height }) {
-  const fl = Fruity[symbol].fillRule
+  
   const d = Fruity[symbol].d
   const b = Fruity[symbol].blueprint
-  console.log('d', d)
-  console.log('b', b)
-  // return <AGI symbol={symbol} width={width} height={height} color={color} />
+  
+  color === "" ? Fruity[symbol].color : color
+  console.log(typeof color)
+  
   return (
     <Svg symbol={symbol} width={width} height={height}>
       {b.map((i, x) => {
@@ -41,7 +42,7 @@ export default function ({ name, symbol, color, width, height }) {
         let o = d[x].opacity === undefined ? '' : d[x].opacity
 
         if (typeof i === 'string') {
-          console.log('type of', typeof i)
+          {/* console.log('type of', typeof i) */}
           return (
             <Path
               key={x}
@@ -54,18 +55,18 @@ export default function ({ name, symbol, color, width, height }) {
           )
         } else {
           let counter = 0
-          console.log('type of', typeof i, counter, d[counter].fillRule)
+          {/* console.log('type of', typeof i, counter, d[counter].fillRule) */}
           return (
             <g
               fillRule={
                 d[counter].fillRule !== undefined ? d[counter].fillRule : ''
               }
-              key={counter}
+              key={x}
             >
               {i.map((item, index) => {
                 counter = counter + 1
                 if (typeof item === 'string') {
-                  console.log('type of', typeof item, counter)
+                  {/* console.log('type of', typeof item, counter) */}
                   return (
                     <Path
                       key={counter}
@@ -89,7 +90,7 @@ export default function ({ name, symbol, color, width, height }) {
                     />
                   )
                 } else {
-                  console.log('type of', typeof item, counter)
+                  {/* console.log('type of', typeof item, counter) */}
                   return (
                     <g
                       fillRule={
@@ -97,12 +98,12 @@ export default function ({ name, symbol, color, width, height }) {
                           ? d[counter].fillRule
                           : ''
                       }
-                      key={counter}
+                      key={`${x}-${index}`}
                     >
                       {item.map((n, t) => {
                         counter = counter + 1
                         if (typeof n === 'string') {
-                          console.log('type of', typeof n, counter)
+                          {/* console.log('type of', typeof n, counter) */}
                           return (
                             <Path
                               key={counter}
@@ -123,10 +124,11 @@ export default function ({ name, symbol, color, width, height }) {
                                   ? d[counter].opacity
                                   : ''
                               }
+                              key={`${x}-${index}-${t}`}
                             />
                           )
                         } else {
-                          console.log('type of', typeof n, counter)
+                          {/* console.log('type of', typeof n, counter) */}
                         }
                       })}
                     </g>
@@ -143,46 +145,5 @@ export default function ({ name, symbol, color, width, height }) {
       })}
     </Svg>
   )
-  // switch(symbol){
-  //     case 'AGI':
-  //         return <AGI symbol={symbol} width={width} height={height} color={color} />
-  //     case 'AION':
-  //         return <AION symbol={symbol} width={width} height={height} color={color} />
-  //     case 'CNX':
-  //         return <CNX symbol={symbol} width={width} height={height} color={color} />
-  //     case 'ELA':
-  //         return <ELA symbol={symbol} width={width} height={height} color={color} />
-  //     case 'ETC':
-  //         return <ETC symbol={symbol} width={width} height={height} color={color} />
-  //     case 'ETH':
-  //         return <ETH symbol={symbol} width={width} height={height} color={color} />
-  //     case 'HPB':
-  //         return <HPB symbol={symbol} width={width} height={height} color={color} />
-  //     case 'INS':
-  //         return <INS symbol={symbol} width={width} height={height} color={color} />
-  //     case 'KLOWN':
-  //         return <KLOWN symbol={symbol} width={width} height={height} color={color} />
-  //     case 'KMD':
-  //         return <KMD symbol={symbol} width={width} height={height} color={color} />
-  //     case 'LEO':
-  //         return <LEO symbol={symbol} width={width} height={height} color={color} />
-  //     case 'MAID':
-  //         return <MAID symbol={symbol} width={width} height={height} color={color} />
-  //     case 'MATIC':
-  //         return <MATIC symbol={symbol} width={width} height={height} color={color} />
-  //     case 'PINK':
-  //         return <PINK symbol={symbol} width={width} height={height} color={color} />
-  //     case 'REQ':
-  //         return <REQ symbol={symbol} width={width} height={height} color={color} />
-  //     case 'SIN':
-  //         return <SIN symbol={symbol} width={width} height={height} color={color} />
-  //     case 'WINGS':
-  //         return <WINGS symbol={symbol} width={width} height={height} color={color} />
-  //     case 'WTC':
-  //         return <WTC symbol={symbol} width={width} height={height} color={color} />
-  //     default:
-  //         return <Svg symbol={symbol} width={width} height={height} >
-  //                     <Path fillRule={fl} fill={color} d={d} />
-  //                 </Svg>
-  // }
+  
 }
