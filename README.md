@@ -18,7 +18,7 @@ import React, { Component } from 'react'
 import Icon from 'react-tutti-crypto'
 
 export default Example () =>
-  <Icon symbol='ADA' color= '#0000FF' width='64' height='64' />
+  <Icon symbol='ADA' color= '#0000FF' size='64' />
 ```
 
 ## License
