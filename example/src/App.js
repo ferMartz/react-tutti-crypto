@@ -12,7 +12,7 @@ const App = () => {
     Manifest.map((i,k)=>{
       var s = i.symbol
       return (
-        <div style={{display:'inline-block', margin: '3%'}} key={k}>
+        <div key={k} style={{display:'inline-block', margin: '3%'}} key={k}>
         <div>
         <Icon name={s} symbol={s} color={i.color} width={size} height={size}  />
         </div>
