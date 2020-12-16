@@ -30,8 +30,8 @@ export default function ({ name, symbol, color, width, height }) {
   const fl = Fruity[symbol].fillRule
   const d = Fruity[symbol].d
   const b = Fruity[symbol].blueprint
-  console.log('d', d)
-  console.log('b', b)
+  // console.log('d', d)
+  // console.log('b', b)
   // return <AGI symbol={symbol} width={width} height={height} color={color} />
   return (
     <Svg symbol={symbol} width={width} height={height}>
@@ -41,7 +41,7 @@ export default function ({ name, symbol, color, width, height }) {
         let o = d[x].opacity === undefined ? '' : d[x].opacity
 
         if (typeof i === 'string') {
-          console.log('type of', typeof i)
+          // console.log('type of', typeof i)
           return (
             <Path
               key={x}
@@ -54,7 +54,7 @@ export default function ({ name, symbol, color, width, height }) {
           )
         } else {
           let counter = 0
-          console.log('type of', typeof i, counter, d[counter].fillRule)
+          // console.log('type of', typeof i, counter, d[counter].fillRule)
           return (
             <g
               fillRule={
@@ -65,7 +65,7 @@ export default function ({ name, symbol, color, width, height }) {
               {i.map((item, index) => {
                 counter = counter + 1
                 if (typeof item === 'string') {
-                  console.log('type of', typeof item, counter)
+                  //console.log('type of', typeof item, counter)
                   return (
                     <Path
                       key={counter}
@@ -89,7 +89,7 @@ export default function ({ name, symbol, color, width, height }) {
                     />
                   )
                 } else {
-                  console.log('type of', typeof item, counter)
+                  // console.log('type of', typeof item, counter)
                   return (
                     <g
                       fillRule={
@@ -102,7 +102,7 @@ export default function ({ name, symbol, color, width, height }) {
                       {item.map((n, t) => {
                         counter = counter + 1
                         if (typeof n === 'string') {
-                          console.log('type of', typeof n, counter)
+                          // console.log('type of', typeof n, counter)
                           return (
                             <Path
                               key={counter}
@@ -126,7 +126,7 @@ export default function ({ name, symbol, color, width, height }) {
                             />
                           )
                         } else {
-                          console.log('type of', typeof n, counter)
+                          // console.log('type of', typeof n, counter)
                         }
                       })}
                     </g>
@@ -135,10 +135,6 @@ export default function ({ name, symbol, color, width, height }) {
               })}
             </g>
           )
-
-          {
-            /* return console.log("this is a g") */
-          }
         }
       })}
     </Svg>
