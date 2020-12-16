@@ -1,10 +1,6 @@
 {
   "name": "react-tutti-crypto",
-<<<<<<< HEAD
-  "version": "1.0.3",
-=======
-  "version": "1.0.4",
->>>>>>> 78f9ee04f4f30329af7b6d371e71433de8a11ea0
+  "version": "1.0.5",
   "description": "Make your own flavor of crypto icons",
   "author": "ferMartz",
   "license": "MIT",

@@ -74,7 +74,7 @@
 		"id": 6,
 		"symbol": "ACTN",
 		"name": "Action Coin",
-		"color": "#ffffff",
+		"color": "#dd3333",
 		"blueprint": [
 			"p"
 		],

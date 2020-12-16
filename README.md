@@ -15,14 +15,10 @@ npm install --save react-tutti-crypto
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-tutti-crypto'
-import 'react-tutti-crypto/dist/index.css'
+import Icon from 'react-tutti-crypto'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
+export default Example () =>
+  <Icon symbol='ADA' color= '#0000FF' width='64' height='64' />
 ```
 
 ## License

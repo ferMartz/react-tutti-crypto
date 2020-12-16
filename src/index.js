@@ -26,16 +26,15 @@ import { Path } from './components/path'
 // import { Group } from './components/group'
 // import SvgFactory from './components/svg_factory'
 
-export default function ({ name, symbol, color, width, height }) {
+export default function ({ name, symbol, color, size }) {
 
   const d = Fruity[symbol].d
   const b = Fruity[symbol].blueprint
+  color === "" || color === undefined ? color = Fruity[symbol].color : color = color
 
-  color === "" ? Fruity[symbol].color : color
-  console.log(typeof color)
 
   return (
-    <Svg symbol={symbol} width={width} height={height}>
+    <Svg symbol={symbol} width={size} height={size}>
       {b.map((i, x) => {
         let fr = d[x].fillRule === undefined ? '' : d[x].fillRule
         let fo = d[x].fillOpacity === undefined ? '' : d[x].fillOpacity
